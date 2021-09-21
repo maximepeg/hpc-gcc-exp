@@ -1,0 +1,66 @@
+1. git clone https://gitlab.citic.udc.es/emilio.padron/matmul
+
+   + 3 complete matrix multiplication kernels: ijk, ijk_op1 & ijk_op2
+   + 3 skeleton codes to replicate the previous ones using a ikj access pattern
+
+2. make O=-O0
+
+   + Compiles with no optimization ijk, ijk_op1 & ijk_op2
+
+3. Execute the three codes and write down the results
+
+4. make O=-O1
+
+   + Now, we enable some compiler optimizations
+
+5. Execute the new binaries and write down the results.
+   How they compare to the previous execution times?
+   What conclussion can you obtain?
+
+6. make O=-O2
+
+   + Even more compiler optimizations are included
+
+7. Execute the new binaries and, again, write down the results.
+
+8. make O=-O3
+
+   + This is usually the 'standard' optimization level most of the times
+
+9. Execute the new binaries and, again, write down the results.
+
+10. make O="-O3 -march=native"
+
+    Just 'make' also does the same, as this is the default in the makefile
+
+    + Now we tailored the binaries for the destination platform
+
+11. Execute the new binaries and, again, write down the results.
+
+12. make O="-Ofast -march=native"
+
+    + This is usually the top optimization level in GCC
+
+13. Execute the new binaries and, again, write down the results.
+
+14. Create a naive ikj version in mutmal_ikj.c
+
+15. Compile this new version with no optimization at all and compare
+    with the no optimized naive ijk version.
+    Write down your results.
+    Do you see any increase in performance? What do you think is the main reason?
+
+16. Compile the ikj version with the different optimization levels, and
+    compare the results.
+    Write down the execution times for the different runs.
+
+17. Code a ikj_op1 version in mutmal_ikj_op1.c, analogous to mutmal_ijk_op1.c
+
+18. Compile ikj_op1 again for the whole battery of compiler options we
+    used in the previous cases. Write down your results.
+
+19. Code a ikj_op2 version in mutmal_ikj_op2.c, analogous to mutmal_ijk_op2.c
+
+20. Compile ikj_op2 again for the whole battery of compiler options we
+    used in the previous cases. Write down your results.
+    Any relevant difference?
