@@ -1,3 +1,18 @@
+0. We are going to create and fill out a table with execution times like this:
+
+------------------------------------------------------------------------------
+                     O0      O1      O2      O3      O3m      Ofast     Ofastm
+
+matmul_ijk
+matmul_ijk_op1
+matmul_ijk_op2
+------------------------------------------------------------------------------
+
+We will use GCC 8.30 in FT2.
+We will perform matrix multiplication for 2048x2048 size matrices.
+Matrix size is a parameter in the code (eg. ./matmul_ijk 2048 is executing the
+code for 2048x2048 matrices).
+
 1. git clone https://gitlab.citic.udc.es/emilio.padron/matmul
 
    + 3 complete matrix multiplication kernels: ijk, ijk_op1 & ijk_op2
