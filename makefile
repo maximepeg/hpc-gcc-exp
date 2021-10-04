@@ -1,7 +1,12 @@
 TARGETS = matmul_ijk matmul_ijk_op1 matmul_ijk_op2
 
+CC = gcc
+
+reportflags.gcc = -fopt-info-optall-optimized
+reportflags.icc = -qopt-report-phase=vec
+
 O = -O3 -march=native
-CFLAGS = $(O) -fopt-info-optall-optimized -Wall -Wextra
+CFLAGS = $(O) $(reportflags.$(CC)) -Wall -Wextra
 
 all: $(TARGETS)
 
