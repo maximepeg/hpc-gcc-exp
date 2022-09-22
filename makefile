@@ -6,7 +6,8 @@ reportflags.gcc = -fopt-info-optall-optimized
 reportflags.icc = -qopt-report-phase=vec
 
 O = -O3 -march=native
-CFLAGS = $(O) $(reportflags.$(CC)) -Wall -Wextra
+#CFLAGS = $(O) $(reportflags.$(CC)) -Wall -Wextra
+CFLAGS = $(O) -Wall -Wextra
 
 all: $(TARGETS)
 
